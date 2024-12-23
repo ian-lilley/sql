@@ -54,7 +54,11 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 2 is for keeping the changes. New information is added as a new row. Type 1 is for overwriting with new information. 
+For Type 1, the CUSTOMER_ADDRESS table would have CUSTOMER_ID and CUSTOMER_ADDRESS. Changes to the address would overwrite the old information.
+For Type 2, the CUSTOMER_ADDRESS table would have CUSTOMER_ID and CUSTOMER_ADDRESS, as in Type 1, but would also
+    have START_DATE, END_DATE, and IS_CURRENT columns to track when each address was valid and which one is current.
+
 ```
 
 ***
